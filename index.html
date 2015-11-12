@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+<head>
+ 
+  		 <meta charset="utf-8">
+
+         <title>European Central Bank stress test results</title>
+     
+     
+          
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/app.css" rel="stylesheet" type="text/css" />
+		<link href="css/chosen.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/libs.js"></script>
+		<script type="text/javascript" src="js/libs3.js"></script>
+		<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+		<script type="text/javascript" src="js/jquery.metadata.min.js"></script>
+    	<script type="text/javascript" src="js/color.js"></script>
+		<script type="text/javascript" src="js/dataModels.js"></script>
+		<script type="text/javascript" src="js/chartBase.js"></script>
+		<script type="text/javascript" src="js/lineChart.js"></script>
+		<script type="text/javascript" src="js/barChart.js"></script>
+		<!-- <script type="text/javascript" src="js/makeMap.js"></script> -->
+		<script type="text/javascript" src="js/sectorChart.js"></script>
+		<script type="text/javascript" src="js/pollChart.js"></script>
+		<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+  <style>
+.container{width:80%;
+zoom:90%;
+text-align:left;} 
+</style>
+</head>
+
+
+<body>
+<center>
+<div class="container">
+	<div id="fb-root"></div>
+		
+
+	<section id="ReutersGraphicsCharts">
+
+			
+		
+		<section id="mainGraphic">
+																
+
+			<div class="fullwidth"><div class="hed">ECB bank test results</div>
+			<div class="dek">The European Central Bank has spent seven months reviewing 130 of the euro zone’s largest banks to see if they have valued their assets properly and if they have enough capital to withstand another crash. The main findings are below.</div>
+				<div class="fullwidth">
+<span class="updated"> BY Monica Ulmanu, Laura Noonan and Vincent Flasseur&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;UPDATED: October 26, 2014 </span>
+</div>
+			</div>
+			
+<div class="fullwidth"> 
+<div class="columnOne">
+	<div class="subhed">How did the banks fare?</div><br>In the first graphic, we show the size of the adjustment to a bank’s capital ratio, in basis points, after the ECB’s asset quality review and three years of crisis. We also look at how far the bank’s end point capital ratio is from the 5.5 percent minimum required by the ECB.
+	<div class="note">Bubbles are sized according to the bank's total assets<br>Deutsche Bank (Malta) out of scale</div>
+
+	
+</div>
+<div class="columnTwo"><div class="subhed" id="failed">Who failed and how much do they need to raise? </div>The ECB says 25 banks failed and were collectively short 25 billion euros at the end of December 2013, the cutoff date for the tests. Since then, the affected banks have already raised 15 billion euros and some do not have to take further action. We show their capital shortfall post net capital raise, which take account of specific capital raising published by the ECB.  
+</div>
+
+ </div> <!-- end text -->
+
+					<div id= "theDropdown">
+										<select id="countrydrop" data-placeholder="View banks by country" class="chosen-select" style="width:280px;" tabindex="1">
+							<option value=""></option>
+				
+						</select>
+						
+						<select id="ownershipdrop" data-placeholder="Or by type of ownership" class="chosen-select" style="width:280px;" tabindex="2">
+							<option value=""></option>
+				
+						</select>
+						
+						<select id="bankdrop" data-placeholder="View an individual bank" class="chosen-select" style="width:285px;" tabindex="3">
+							<option value=""></option>
+				
+						</select>
+						
+						<div class="myButton" id="resetButton">Reset</div>
+				
+					</div> <!-- end theDropdown -->
+					
+					
+					
+<div class="fullwidth">
+	<div id="graphic1"> <div id="keyThreshold"></div><div id="keyFailed"></div><div id="keyPassed"></div><div id="keyFailed2"></div><div id="Reutersgraphic1"></div><div id="theHover"></div></div>
+	<div id="Reutersgraphic2"></div>
+	
+	
+</div>
+
+					
+			
+			
+								<hr class="faded">
+								 
+<div class="fullwidth">
+	<div class="subhed">Test results overview</div>
+	<p>Click on columns to sort and group overall results. Click on rows to <span class="highlighted">select</span> and <span class="highlighted">compare</span> specific banks.</p>
+</div>
+
+<table id="dataTable1" cellspacing="1" class="tablesorter">
+				  <thead>
+				  <tr class="tableCateg staticRow">
+						  <th colspan="4" style="padding-bottom:0;">Bank<div class="borderBottom"></div><div class="downArrow"></div></th>
+						  <th colspan="3" style="padding-bottom:0;">ECB adjustments<div class="borderBottom"></div><div class="downArrow"></div></th>
+						  <th colspan="1" style="padding-bottom:0;">Need to raise<div class="borderBottom"></div><div class="downArrow"></div></th>
+						  </th>
+						  </tr>
+
+				    <tr>
+				      <th class="tablehead">Name<br></th>						      
+				      <th class="tablehead" >Country<br></th>
+				      <th class="tablehead">Assets<br>end of 2013<br> (€ bln.)</th>
+				      <th class="tablehead">Ownership<br></th>  
+				      <th class="tablehead">Worst CET1 ratio <br>over stressed scenario (%)<br><span style="color:red">Threshold:5.5%</span>
+				      </th> 
+				      <th class="tablehead">AQR adjustment<br> (€ mil.) <br></th>  
+				      <th class="tablehead">Basis points<br></th>   
+				      <th class="tablehead">Capital shortfall post<br>net capital raised<br> (€ mil.)</th> 
+				    </tr>
+				  </thead>
+				  <tbody>
+				  </tbody>
+				</table>			
+							
+				<div class="source">Source: European Central Bank    <div>
+				
+				
+
+			</section>		
+				
+		</section>          
+
+
+
+	</section>
+
+
+<script type="text/javascript">
+
+	
+
+		//define some stuff
+		var targetDiv = 'Reutersgraphic1';
+		var targetDiv2 = 'Reutersgraphic2';
+		var	width = $('#' + targetDiv).width();
+		var	height = $('#'+ targetDiv).height();
+		var	width2 = $('#' + targetDiv2).width();
+		var	height2 = $('#'+ targetDiv2).height();	
+		var padding = 80;						
+		var NumbType = d3.format("0,.1f");
+		var NumbType2 = d3.format("0,000");
+		var svgWidth = 100;
+		var barWidth = 100;
+		var barHeight = 15;	
+		var yscalevals = [0, 2500];
+		var xscalevals = [-10, 55];
+		
+		var yscalevals2 = [0, 100];
+		var xscalevals2 = [0, 5];
+		
+		//make svg
+		var svg = d3.select("#"+targetDiv).append("svg")
+		    .attr("width", width)
+		    .attr("height", height)
+		    
+		//make svg for second graphic
+	
+ var svg2 = d3.select("#"+targetDiv2).append("svg")
+		    .attr("width", width2)
+		    .attr("height", height2)
+
+		    
+		//make key
+		d3.select("#keyThreshold")
+		.text ("5.5% THRESHOLD");
+		
+		//make failed/passed
+		d3.select("#keyFailed")
+		.text ("Failed");
+		
+		d3.select("#danger")
+		.text ("In danger");
+		
+		d3.select("#keyFailed2")
+		.text ("Failed");
+		
+		d3.select("#keyPassed")
+		.text ("Passed");	 
+		
+			queue()
+			    .defer(d3.csv, "ecb_tests.csv")
+			    .await(ready);
+
+					
+	 function ready(error, ecbdata){	 
+	 	var datafile = ecbdata.map(function(bank) {
+						return {id: bank.ID,
+								name: bank.name,
+								assets: bank.assets,
+								country: bank.country, 
+								ownership: bank.ownership, 
+								cet1: bank.cet1,    				
+						        worst: bank.worst,
+						        adjustmentPoints: bank.adjustmentPoints,
+						        adjustmentEuro: bank.adjustmentEuro,
+						        capitalShortfall: bank.capitalShortfall,
+						        outstandingCapitalShortfall: bank.outstandingCapitalShortfall,
+						        outstandingCapitalShortfallMillion: bank.outstandingCapitalShortfallMillion,
+						        ocsPercentage: bank.ocsPercentage
+					           				
+						};
+			  	});
+
+			  datafile.sort(function (a,b){ 
+				  if (a.name < b.name){
+				  	  return -1;				  
+				  }else if (b.name < a.name){
+					  return 1
+				  }
+				  return 0;				  
+			  })
+			  
+			  datafile.shift();
+
+
+			  	
+	 //order banks by country
+				var getNests = d3.nest()
+							.key(function(d) { return d.country; })
+							.map(datafile);
+				//make an array of just the countries		
+				var countries = d3.keys(getNests);
+				countries.push("")
+				countries.sort()
+				
+	//group banks by ownership
+				var getNestsOwnership = d3.nest()
+							.key(function(d) { return d.ownership; })
+							.map(datafile);
+				//make an array of just the countries		
+				var owners = d3.keys(getNestsOwnership);				
+				
+				owners.push("");
+				owners.sort();
+
+				
+				
+	//fill out the country dropdown list	
+				var countrydrop = d3.select("#countrydrop")
+				   .selectAll("option")
+				   .data(countries)
+				   .enter()
+				   .append("option")
+				   .attr("value", function(d){
+					   return d 
+				   })
+				   .html(function(d){
+					   return d
+				   })	
+				   
+	//fill in the ownership bank dropdown list
+				var ownershipdrop = d3.select("#ownershipdrop")
+				   .selectAll("option")
+				   .data(owners)
+				   .enter()
+				   .append("option")
+				   .attr("value", function(d){
+					   return d
+				   })
+				   .html(function(d){
+					   return d
+				   })
+				   
+	//fill out the bank dropdown list
+				var bankdrop = d3.select("#bankdrop")
+				   .selectAll("option")
+				   .data(datafile)
+				   .enter()
+				   .append("option")
+				   .attr("value", function(d){
+					   return d.name
+				   })
+				   .html(function(d){
+					   return d.name
+				   })	
+				   
+				   	   				   		
+	 
+    //function that will remove everything from the bank dropdown list and regenerate it.
+				  function regenerateBankList (){		  
+					 bankdrop.remove()
+						  	bankdrop = d3.select("#bankdrop")
+								   .selectAll("option")
+								   .data(datafile)
+								   .enter()
+								   .append("option")
+								   .attr("value", function(d){
+									   return d.name
+								   })
+								   .html(function(d){
+									   return d.name
+								   })
+						  	$("#bankdrop").trigger("chosen:updated")		  
+				  }
+				  
+				  //function that will remove everything from the bank dropdown list and regenerate it.
+				  function regenerateCountryList (){		  
+					 countrydrop.remove()
+				countrydrop = d3.select("#countrydrop")
+								   .selectAll("option")
+								   .data(countries)
+								   .enter()
+								   .append("option")
+								   .attr("value", function(d){
+									   return d
+								   })
+								   .html(function(d){
+									   return d
+								   })
+						  	$("#countrydrop").trigger("chosen:updated")	
+						    
+				  }
+				  
+				  function regenerateOwnershipList (){		  
+					 ownershipdrop.remove()
+				ownershipdrop = d3.select("#ownershipdrop")
+								   .selectAll("option")
+								   .data(owners)
+								   .enter()
+								   .append("option")
+								   .attr("value", function(d){
+									   return d
+								   })
+								   .html(function(d){
+									   return d
+								   })
+						  	$("#ownershipdrop").trigger("chosen:updated")		  
+				  }
+
+	//function to reset all fields
+		$(".myButton").click(function(){
+			regenerateBankList();
+			regenerateCountryList();
+			regenerateOwnershipList();
+			makedots.classed("turnedOff", false);
+			makedots.classed("turnedHidden", false);
+			makedots.classed("turnedShown", true);
+			makedots2.classed("turnedShown", true);
+			d3.select("#theHover").html("").style("display","none");
+			makedots2.classed("turnedOff", false);
+			makedots2.classed("turnedHidden", false);
+
+			
+		})					  
+   
+   //function that will remove everything from the bank dropdown list and regenerate it.
+ var theCountry = "";
+ var theOwnership = "";
+ var theBank = "";
+  
+ //use the plugin on the country dropdown list
+	$('#countrydrop').chosen({
+		allow_single_deselect: true
+				      	})
+		.change(function(){	
+		d3.select("#theHover")
+		.style("display","none")
+							 .html(""); 	
+			
+					   		
+		//clear and refil the bank list
+		regenerateBankList();
+		regenerateOwnershipList();
+		makedots.classed("turnedOff",false);
+			makedots2.classed("turnedOff",false);
+		makedots.classed("turnedHidden", false);
+		makedots2.classed("turnedHidden", false);
+		makedots.classed("turnedShown", true);
+		makedots2.classed("turnedShown", true);
+
+		//figure out what value you've chosen
+		theCountry = $('#countrydrop').val();
+		/* theOwnership = theCountry.ownership; */
+	
+					if (theCountry == ""){
+	//if you've cleared it out, make all the dots come back and remake the whole company list
+			makedots.classed("turnedOff",false);
+			makedots2.classed("turnedOff",false);
+			makedots.classed("turnedShown", true);
+			makedots2.classed("turnedShown", true);
+			makedots.classed("turnedHidden",false);
+			makedots2.classed("turnedHidden",false) ;  				  				regenerateBankList(); 
+			regenerateOwnershipList();  	
+				
+		}else{			  	
+			//put a class turnedOff and any dots that don't have your country
+				makedots.classed("turnedHidden",function (d){
+			if (d.country == theCountry){return false}else{return true}	
+							  	});
+							  	
+				makedots2.classed("turnedHidden",function (d){
+			if (d.country == theCountry){return false}else{return true}	
+							  	});	
+							  	
+			makedots.classed("turnedShown",function (d){
+			if (d.country == theCountry){return true}else{return false}	
+							  	});
+							  	
+		makedots2.classed("turnedShown",function (d){
+			if (d.country == theCountry){return true}else{return false}	
+							  	});							  						  	
+	//put a class turnedOff on any bank names in the bank dropdown that don't match your country
+		bankdrop.classed("turnedOff", function(d){
+			if (d.country == theCountry){return false}else{return true}	
+					})					
+															
+	//remove the ones that don't match and rerun the list
+				d3.selectAll("option.turnedOff").remove();
+				d3.selectAll("option.turnedHidden").remove();				
+				$("#bankdrop").trigger("chosen:updated")
+							}				
+				      	});
+				      	
+//use the plugin on the ownership dropdown list
+				      $('#ownershipdrop').chosen({
+				      	allow_single_deselect: true
+				      	})
+				      	.change(function(){
+				      	d3.select("#theHover")
+		.style("display","none")
+							   		.html("");
+						  	
+						  	//clear and refil the bank list
+						  	regenerateBankList();
+						  	regenerateCountryList();
+						  	makedots.classed("turnedOff",false);
+			makedots2.classed("turnedOff",false);
+
+						  	makedots.classed("turnedHidden", false);
+						  	makedots2.classed("turnedHidden", false);
+		makedots.classed("turnedShown", true);
+		makedots2.classed("turnedShown", true);
+		
+ 	makedots.classed("turnedShown", true);
+	makedots2.classed("turnedShown", true);
+
+					//reset country list
+
+						  	//figure out what value you've chosen
+						  	theOwnership = $('#ownershipdrop').val();
+						  	if (theOwnership == ""){
+							  	//if you've cleared it out, make all the dots come back and remake the whole bank list
+							  	
+								makedots.classed("turnedOff",false);
+								makedots2.classed("turnedOff",false) ; 				  					makedots.classed("turnedHidden",false);
+							makedots2.classed("turnedHidden",false) ;
+							makedots.classed("turnedShown", true);
+							makedots2.classed("turnedShown", true);
+								regenerateBankList(); 
+								regenerateCountryList();  
+						  	}else{			  	
+							  	//put a class turnedOff and any dots that don't have your country
+							  	makedots.classed("turnedHidden",function (d){
+								  	if (d.ownership == theOwnership){return false}else{return true}			  	
+							  	})	
+							  	
+							  	makedots2.classed("turnedHidden",function (d){
+								  	if (d.ownership == theOwnership){return false}else{return true}			  	
+							  	})	
+							  	
+							  	makedots.classed("turnedShown",function (d){
+			if (d.ownership == theOwnership){return true}else{return false}	
+							  	});
+							  	
+		makedots2.classed("turnedShown",function (d){
+			if (d.ownership == theOwnership){return true}else{return false}	
+							  	});						  				  	
+						  	
+				//put a class turnedOff on any company names in the company dropdown that don't match your industry
+							 bankdrop.classed("turnedOff", function(d){
+									 		if (d.ownership == theOwnership){return false}else{return true}																  	
+								  	})
+								  	
+								  	 bankdrop.classed("turnedHidden", function(d){
+									 		if (d.ownership == theOwnership){return false}else{return true}																  	
+								  	})
+								  	
+						
+}
+								  				  	
+								  	//remove the ones that don't match and rerun the list
+							      	d3.selectAll("option.turnedHidden").remove();
+/* makedots2.classed("turnedHidden", false); */				
+$("#bankdrop").trigger("chosen:updated");		
+				      	});
+			
+					  $('#bankdrop').chosen({
+				      	allow_single_deselect: true
+				      	})
+				      	.change(function(){
+						  	var selectedBank;
+						  	d3.select("#theHover")
+							   		.html("");
+						  	//figure which company you have selected
+						  	theBank = $('#bankdrop').val();
+						  	//if you've reset the bank, then bring all the dots back, otherwise turn off everything but your dot.
+						  	if (theBank == ""){					
+								makedots.classed("turnedOff",function (d){
+								  	if (d.bank== theBank){return false}else{return true}			  	
+							  	})
+							  	
+		makedots2.classed("turnedOff",function (d){
+		if (d.bank== theBank){return false}else{return true}			  	
+							  	})
+}							  	
+							  	if (theBank == ""){   
+		regenerateCountryList(); 
+		regenerateOwnershipList();			  	
+		makedots.classed("turnedOff",false);
+    makedots2.classed("turnedOff",false)
+    makedots.classed("turnedHidden",false);
+							makedots2.classed("turnedHidden",false) ;								  								  							  	
+						  	}else{			  	
+							  	makedots.classed("turnedOff",function (d){
+								  	if (d.name == theBank){			  			
+							  		var thisItem = d;
+										   d3.select("#theHover")
+										   	.html(function(d){					   	
+		var tip = '<div class="tip"><div class="tip1">' + thisItem.name + '</div><div class="countryTip">' + thisItem.country + '</div><div class="tip2">Worst CET1 ratio and adjustments</div><div class="resultsTip">'+ NumbType(thisItem.worst) +'% | ' + NumbType2(thisItem.adjustmentPoints) + ' basis points</div><div class="tip2">Capital shortfall post net capital raised </div><div class="resultsTip"> €'+ NumbType2(thisItem.outstandingCapitalShortfallMillion) +' mil. | ' + NumbType2(thisItem.ocsPercentage) + '% of CET1 Capital </div></div>';
+									return tip;
+										   	})	   
+			/*
+.style("top", "-650px")
+			.style("left", "350px")	
+*/
+			.style("display","block")
+								   	;
+								  		return false}else{	return true;}			
+							  	});  	
+		makedots2.classed("turnedOff",function (d){
+								  	if (d.name == theBank){	return false
+								  	}else{	return true;}			  	
+							  	})					  
+						  	}	
+				$("#bankdrop").trigger("chosen:updated");   	  							 	 
+						 });
+						 
+						 
+//bank drop chosen here
+		
+		
+		//defines the scale, input is the far ends of the values above, output is the size of the width and height
+		x = d3.scale.linear()
+	.domain([xscalevals[0],xscalevals[xscalevals.length-1]])   
+	.range([padding, width-padding])
+							
+					                     
+	y = d3.scale.linear()
+ .domain([yscalevals[0],yscalevals[yscalevals.length-1]])
+ .range([height-padding,padding]);
+ 
+ //defines the scale, input is the far ends of the values above, output is the size of the width and height
+		x2 = d3.scale.linear()
+	.domain([xscalevals2[0],xscalevals2[xscalevals2.length-1]])   
+	.range([padding, width-padding])
+							
+					                     
+	y2 = d3.scale.linear()
+ .domain([yscalevals2[0],yscalevals2[yscalevals2.length-1]])
+ .range([height-padding,padding]);
+
+ //draw the axis, you'll actually call this later on. ticks are defined by variable at beginning
+						var xAxis = d3.svg.axis()
+					        .scale(x)
+					        .orient("bottom")
+					        .tickSize((2*padding)-height)
+					        .tickPadding(8);
+					
+						var yAxis = d3.svg.axis()
+					        .scale(y)
+					        .orient("left")
+					        .ticks(5)				        
+					        .tickSize((2*padding)-width)
+					        .tickPadding(8);
+					        
+	//draw the second axis, you'll actually call this later on. ticks are defined by variable at beginning
+						var xAxis2 = d3.svg.axis()
+					        .scale(x2)
+					        .orient("bottom")
+					        .ticks(5)
+					        .tickSize((2*padding)-height)
+					        .tickPadding(5);
+					
+						var yAxis2 = d3.svg.axis()
+					        .scale(y2)
+					        .orient("left")
+					        .ticks(5)				        
+					        .tickSize((1*padding)-width)
+					        .tickPadding(8);
+				        					
+					     				
+						//actually call and draw all those axis.
+					    svg.append("g")
+					    	.attr ("class", "y axis")
+					    	.attr("transform", "translate(" + (+padding) + ",0)")
+					    	.call(yAxis);
+					    	
+					    svg.append("g")
+					      	.attr ("class", "x axis")
+					    	.attr("transform", "translate(0," + (height - padding) + ")")
+					    	.call(xAxis);
+
+  
+  
+ //actually call and draw all those axis.
+					    svg2.append("g")
+					    	.attr ("class", "y axis")
+					    	.attr("transform", "translate(" + (+padding) + ",0)")
+					    	.call(yAxis2);
+					    	
+					    svg2.append("g")
+					      	.attr ("class", "x axis")
+					    	.attr("transform", "translate(0," + (height - padding) + ")")
+					    	.call(xAxis2);
+					    	
+					    	
+  //draw 5.5 threshold
+ 							 svg.append("svg:line")
+							.attr("class", "XaxisThreshold")
+							.attr("clip-path","url(#clip)")
+							.attr('x1',x(5.5))
+							.attr('x2', x(5.5))
+							.attr('y1',padding-30)
+							.attr('y2',height-padding)
+							.style('stroke', "#000000")
+							.style('stroke-width', 2);								
+							
+						svg.append("svg:line")
+							.attr("class", "YaxisZero")
+							.attr("clip-path","url(#clip)")
+							.attr('x1',padding)
+							.attr('x2', width-padding)
+							.attr('y1',y(0))
+							.attr('y2',y(0))
+							.style('stroke', "#000000")
+							.style('stroke-width', 2);	
+							
+
+
+//variables for finding correspondent banks
+var correspondentBank = d3.select("#Reutersgraphic1");
+var correspondentBank2 = d3.select("#Reutersgraphic2");					
+						
+						//draw the first set of dots.
+						var makedots = svg.selectAll("scatter-dots")
+						   .data(datafile)
+						   .enter()
+						   .append("svg:circle")
+						   .attr("clip-path","url(#clip)")
+						   .attr("class", "scatter-dots")
+						   .attr ("cx", function (d) {
+						   		return x(d.worst) ;})
+						    .attr ("cy", function (d) {
+						   		return y(d.adjustmentPoints);})
+						   .attr ("r", function(d) {return Math.sqrt(d.assets)/1.2;})
+						   .style("fill", function(d){ if (d.worst<5.6) {return "#333"}else {return "#999"}}) 
+						   .style("stroke","white") 
+						   .style("stroke-width","0.5")	
+						   .attr("id", function(d){return "#bank" + d.id})					   
+						   .on("mouseover", function(d){
+						  var thisBankID = d3.select(this).attr('id');
+			theBank = $('#bankdrop').val();
+					if ( theBank != ""){return}							  	   
+				makedots.classed("turnedDown", true)
+				d3.select(this)
+					.style("stroke","black") 
+					.classed("turnedDown",false)				   	
+					var thisItem = d;
+					correspondentBank2.selectAll('circle').style("stroke", function (d){
+						if (d.id==thisItem.id) {return "black"} else {return}
+						
+					});
+					
+					correspondentBank2.selectAll('circle').classed("turnedDown", function (d){
+						if (d.id==thisItem.id) {return false} else {return true}
+						
+					});
+			d3.select("#theHover")
+			.style("display","block");
+					
+				d3.select("#theHover")
+						.html(function(d){					   	
+		var tip = '<div class="tip"><div class="tip1">' + thisItem.name + '</div><div class="countryTip">' + thisItem.country + '</div><div class="tip2">Worst CET1 ratio and adjustments</div><div class="resultsTip">'+ NumbType(thisItem.worst) +'% | ' + NumbType2(thisItem.adjustmentPoints) + ' basis points</div><div class="tip2">Capital shortfall post net capital raised </div><div class="resultsTip"> €'+ NumbType2(thisItem.outstandingCapitalShortfallMillion) +' mil. | ' + NumbType2(thisItem.ocsPercentage) + '% of CET1 Capital </div></div>';
+									return tip;
+										   	})	
+		/*
+	.style("top", "-650px")
+			.style("left", "350px")
+*/
+			
+									   					   
+						   })
+					   
+						   .on("mouseout", function(d){
+							   	theBank = $('#bankdrop').val();
+							   	if (theBank != ""){return}
+			correspondentBank2.selectAll('circle').style("stroke", "white");					correspondentBank2.selectAll('circle').classed("turnedDown", false);
+
+				   	
+							   	makedots.classed("turnedDown", false); 
+							   	d3.select("#theHover")
+			.style("display","none");
+							   d3.select("#theHover")
+							   		.html("");
+							   d3.select(this)
+							.attr ("r", function(d) {return Math.sqrt(d.assets)/1.2;})
+						   .style("stroke","white") 
+						   .style("stroke-width","0.5")			
+						   })
+						   .sort(function(a,b){
+		if(a.assets < b.assets){
+       return 1;
+   }else if(b.assets < a.assets){
+       return -1;    
+   }    
+   return 0;					   
+							   
+						   }).order()
+						   
+						   ;
+
+
+						   
+//draw the second set of dots.
+						var makedots2 = svg2.selectAll("scatter-dots")
+						   .data(datafile)
+						   .enter()
+						   .append("svg:circle")
+						   .attr("clip-path","url(#clip)")
+						   .attr("class", function(d){ if (d.worst<5.6) { return "scatter-dots"} else {return "scatter-dots-hidden"}})
+						   .attr ("cx", function (d) { 
+						   		return x2(d.outstandingCapitalShortfall);})
+						    .attr ("cy", function (d) {
+						   		return y2(d.ocsPercentage);})
+						   .attr ("r", function(d) {return Math.sqrt(d.assets)/1.2;})
+						   .style("fill", "#333") 
+						   .style("stroke","white") 
+						   .style("stroke-width","0.5")	
+						   .attr("id", function(d){return "#bank" + d.id})					   
+						   .on("mouseover", function(d){
+						   	var thisItemID = d3.select(this).attr('id');
+						   	var thisItem = d;						   correspondentBank.selectAll('circle').style("stroke", function (d){
+		if (d.id==thisItem.id) {return "black"} else {return}				
+					});
+		correspondentBank.selectAll('circle').classed("turnedDown", function (d){
+			if (d.id==thisItem.id) {return false} else {return true}		
+					});  	
+				theBank = $('#bankdrop').val();
+				if ( theBank != ""){return}											
+				makedots2.classed("turnedDown", true)
+				d3.select(this)
+					.style("stroke","black") 
+					.classed("turnedDown",false);	
+					d3.select("#theHover")
+			.style("display","block");
+					d3.select("#theHover")
+					.html(function(d){					   	
+		var tip = '<div class="tip"><div class="tip1">' + thisItem.name + '</div><div class="countryTip">' + thisItem.country + '</div><div class="tip2">Worst CET1 ratio and adjustments</div><div class="resultsTip">'+ NumbType(thisItem.worst) +'% | ' + NumbType2(thisItem.adjustmentPoints) + ' basis points</div><div class="tip2">Capital shortfall post net capital raised </div><div class="resultsTip"> €'+ NumbType2(thisItem.outstandingCapitalShortfallMillion) +' mil. | ' + NumbType2(thisItem.ocsPercentage) + '% of CET1 Capital </div></div>';
+									return tip;
+										   	})	
+	   					   
+						   })
+						   .on("mouseout", function(d){
+							   	theBank = $('#bankdrop').val();
+							  
+							   	if (theBank != ""){return}
+				correspondentBank.selectAll('circle').style("stroke", "white");					correspondentBank.selectAll('circle').classed("turnedDown", false);
+							   	makedots2.classed("turnedDown", false);
+							   	d3.select("#theHover")
+			.style("display","none");
+							 d3.select("#theHover")
+							   		.html("");
+							   d3.select(this)
+							.attr ("r", function(d) {return Math.sqrt(d.assets)/1.2;})
+						   .style("stroke","white") 
+						   .style("stroke-width","0.5")			
+						   }).sort(function(a,b){
+		if(a.assets < b.assets){
+       return 1;
+   }else if(b.assets < a.assets){
+       return -1;    
+   }    
+   return 0;					   
+							   
+						   }).order();
+						   
+						   
+						   
+					 	      	
+						  
+						  var line = d3.svg.line()
+					    	.defined(function(d) { return d.worst != 9999 && d.adjustmentPoints != 9999; })
+					    	.x(function(d) { return x(d.worst); })
+						    .y(function(d) { return y(d.adjustmentPoints); });
+						    
+						    var line2 = d3.svg.line()
+					    	.defined(function(d) { return d.outstandingCapitalShortfall != 99999 && d.ocsPercentage != 99999; })
+					    	.x(function(d) { return x(d.outstandingCapitalShortfall); })
+						    .y(function(d) { return y(d.ocsPercentage); });
+  
+//put in vertical label
+svg.append("svg:text")
+	.attr("text-anchor", "middle")
+	.attr("transform", "rotate (90)")
+	.attr ("x", (height/2))
+	.attr("y", -2 )
+	.attr("id", "YLabel")
+	.text ("Adjustment (basis points)")
+	.attr ("class","label");
+
+//put in horizontal label	
+svg.append("svg:text")
+	.attr("text-anchor", "middle")
+	.attr ("x", (width/2))
+	.attr("y", (height -(padding/1.2))+30 )
+	.attr("id", "xLabel")
+	.text ("Worst CET1 Ratio over stressed scenario")
+	.attr ("class","label"); 	
+	
+
+//put in vertical label second graphic
+svg2.append("svg:text")
+	.attr("text-anchor", "middle")
+	.attr("transform", "rotate (90)")
+	.attr ("x", (height/2))
+	.attr("y", -2 )
+	.attr("id", "YLabel")
+	.text ("As % of Common Equity Tier 1 Capital")
+	.attr ("class","label");
+
+//put in horizontal label	
+svg2.append("svg:text")
+	.attr("text-anchor", "middle")
+	.attr ("x", (width/3))
+	.attr("y", (height -(padding/1.2))+30 )
+	.attr("id", "xLabel")
+	.text ("Capital shortfall post net capital raise (€ bln.)")
+	.attr ("class","label"); 	
+	}
+	
+	
+	d3.csv("ecb_data.csv", function(theData) {
+
+	var barScale3 = d3.scale.linear()
+		.domain([d3.min(theData, function(d) { return parseFloat(d.worst,10); }),d3.max(theData, function(d) { return parseFloat(d.worst,10); })])
+		.range([0, barWidth]);
+
+
+	var barScale4= d3.scale.linear()
+		.domain([0,d3.max(theData, function(d) { return parseFloat(d.adjustmentEuro); })])
+		.range([0, barWidth]);
+		
+	var barScale6 = d3.scale.linear()
+		.domain([0,d3.max(theData, function(d) { return parseFloat(d.capitalShortfall); })])
+		.range([0, barWidth]);	
+		
+	var barScale7 = d3.scale.linear()
+		.domain([0,d3.max(theData, function(d) { return parseFloat(d.outstandingCapitalShortfall); })])
+		.range([0, barWidth]);		
+		
+
+  var headers = d3.keys(theData[0]).filter(function(key) {
+    return key != "name";
+  }); 
+
+var tr = d3.select("#dataTable1 tbody")
+  	  .selectAll("tr")
+      .data(theData)
+	  .enter()
+	  .append("tr")
+	  .on("click", function(d){
+		 $(this).toggleClass("static");
+
+		 // set sorting column and direction, this will sort on the first and third column the column index starts at zero 
+        var sorting = [[1,1],[0,0]]; 
+        // sort on the first column 
+        $("table").trigger("sorton",[sorting]); 
+        // return false to stop default link action 
+        return false; 
+
+	  })
+
+tr.append("th")
+      .html(function(d) { return d.name; })
+
+var td= tr.selectAll("#dataTable1 td")
+  	 .data(function(d) { return headers.map(function(k) { return d[k]}); })
+  	 .enter().append("td")
+	 .html(function(d,i){
+	 
+	 	var theValue = d;
+	 	if (i==3){return "<div class='numberAssets'>"+NumbType(d)+"%</div>"} else if (i==1 || i==4 || i==6 || i==7 ){return "<div class='numberAssets'>"+NumbType(d)+"</div>"}  else if (i==5){return "<div class='numberAssets'>"+NumbType2(d)+"</div>"}  else 
+	 	{return "<div class='numberAssets2'>"+theValue+"</div>"}	 })
+	 .append("svg")
+     .attr("width",function (d,i){
+	if( i==3 || i==4 )  {return barWidth}	else {return 0}	      
+		      })
+	 .attr("height", 30)
+
+
+td.append("rect")
+      .attr("height", barHeight)
+      .attr("y", 6)
+      .attr("x", function (d,i){			 
+	 if (i==3 || i==4 ) {
+	var thisScale = eval("barScale"+i); 
+	return thisScale(Math.min(0,d))} else return false; 	  			
+	  })
+	  .attr("width", function (d,i){
+		      if (i==3 || i==4 ) {
+			  var thisScale = eval("barScale"+i);
+		      return Math.abs((thisScale(d) - thisScale(0))) ;} else return 0;		  
+			 
+	  })
+      .style("fill", function (d,i){
+	     if(i==3){
+		  	if (d>5.5){return "#999"}else{
+		  return red2}} 
+		  else{return red2}
+
+      })
+
+
+ td.append("svg:line")
+		.attr('x1', function (d,i){
+			if (i==3){return barScale3(0)}
+			
+		})
+		.attr('x2', function (d,i){
+			if (i==3){return barScale3(0)}
+						
+		})		
+		.attr('y1',-50)
+		.attr('y2',1000)
+		.style('stroke', function (d,i){
+			if (i==3){return "#ccc"}
+						
+		})	
+		.style('stroke-width', 1);
+		
+
+td.append("svg:line")
+		.attr('x1', function (d,i){
+			if (i==3){return barScale3(5.5)}
+			
+		})
+		.attr('x2', function (d,i){
+			if (i==3){return barScale3(5.5)}
+						
+		})		
+		.attr('y1',-50)
+		.attr('y2',1000)
+		.style('stroke', function (d,i){
+			if (i==3){return "black"}
+						
+		})	
+		.style('stroke-width', 1.2);
+
+
+		
+$.tablesorter.addWidget({
+    id: 'staticRow',
+    format: function(table) {
+                $('tbody .static', table).each(function() {
+                    var thisRow = $(this).detach();
+					thisRow.prependTo($('tbody', table));
+                })    
+    }
+});
+
+
+$.tablesorter.addParser({ 
+        // set a unique id 
+        id: 'thousands', 
+        is: function(s) { 
+            // return false so this parser is not auto detected 
+            return false; 
+        }, 
+        format: function(s) { 
+            // format your data for normalization 
+            return s.replace(/,/g,'') 
+        }, 
+        // set type, either numeric or text 
+        type: 'numeric' 
+    });
+
+$.tablesorter.addParser({ 
+        // set a unique id 
+        id: 'removePercent', 
+        is: function(s) { 
+            // return false so this parser is not auto detected 
+            return false; 
+        }, 
+        format: function(s) { 
+            // format your data for normalization 
+            return s.replace(/%/g,'') 
+        }, 
+        // set type, either numeric or text 
+        type: 'numeric' 
+    }); 
+ 
+jQuery.tablesorter.addParser({
+  id: "commaDigit",
+  is: function(s, table) {
+    var c = table.config;
+    return jQuery.tablesorter.isDigit(s.replace(/,/g, ""), c);
+  },
+  format: function(s) {
+    return jQuery.tablesorter.formatFloat(s.replace(/,/g, ""));
+  },
+  type: "numeric"
+});
+	  
+    $("#dataTable1").tablesorter({
+	  		sortList: [[4,0]],
+	  		widgets: ['staticRow'],
+	        headers: { 
+                0: {type:'text'},
+                1: {sorter:'text'},
+                2: {sorter:'thousands'},
+                4:{sorter:'removePercent'},                
+                5:{sorter:'thousands'},
+                6: {sorter:'thousands'},
+                7: {sorter:'thousands'},
+                8: {sorter:'thousands'},
+                9: {sorter:'thousands'}              
+
+            }           		  
+	  })
+	  
+	  });
+
+	
+	
+</script>
+</center>
+</div>
